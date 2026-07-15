@@ -1,5 +1,6 @@
 function saludar() {
     console.log("Hola mundo!");
+    return 1;
 }
 
 // A esto se le llama una función anónima, ya que no tiene nombre. Se puede asignar a una variable y luego invocarla a través de esa variable.
@@ -29,3 +30,23 @@ saludar3("Juan");
 saludar4("Juan", 40, "México"); // Se pueden pasar más argumentos de los que la función espera, y se pueden acceder a ellos a través del objeto arguments.
 
 saludarFlecha();
+
+const retornoDeSaludar = saludar();
+console.log({ retornoDeSaludar }); // 1
+
+function sumar(a, b) {
+    return a + b;
+}
+
+const sumar2 = (a, b) => a + b;
+
+function getAleatorio() {
+    return Math.random();
+}
+
+const getAleatorio2 = () => Math.random();
+    
+console.log(sumar(1, 2)); // 3
+console.log(sumar2(1, 2));
+console.log(getAleatorio2());
+console.log(getAleatorio());
