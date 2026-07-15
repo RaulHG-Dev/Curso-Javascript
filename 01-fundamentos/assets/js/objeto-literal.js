@@ -34,3 +34,28 @@ const x = 'vivo';
 console.log("Vivo", personaje[x]);
 
 console.log("última pelicula", personaje['ultima-pelicula']);
+
+// Más detalles sobre los objetos literales
+// Eliminar propiedades de un objeto literal
+delete personaje.casado;
+console.log(personaje);
+
+// Agregar propiedades a un objeto literal
+personaje.casado = true;
+
+// entries, nos permite convertir un objeto en un arreglo de arreglos, donde cada sub-arreglo contiene una clave y su valor correspondiente.
+const entriesPares = Object.entries(personaje);
+console.log(entriesPares);
+
+console.log(personaje);
+
+Object.freeze(personaje); // Congela el objeto, evitando que se puedan agregar, eliminar o modificar propiedades.
+// Nota: Object.freeze() solo congela el objeto en sí, pero no congela los objetos anidados dentro de él. Por lo tanto, las propiedades de los objetos anidados aún pueden ser modificadas.
+
+personaje.dinero = 1000000000; // No se puede agregar una nueva propiedad
+personaje.casado = false; // No se puede modificar una propiedad existente
+console.log(personaje);
+
+const propiedades = Object.getOwnPropertyNames(personaje); // Devuelve un arreglo con los nombres de las propiedades del objeto.
+const valores = Object.values(personaje); // Devuelve un arreglo con los valores de las propiedades del objeto.
+console.log({propiedades, valores});
